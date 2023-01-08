@@ -1,0 +1,31 @@
+﻿@model ApplicationBlog.UI.Models.Home.HomeIndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container">
+
+    @if (!Model.LatestPosts.Any())
+    {
+        <h1>THERE IS NO POST HERE</h1>
+    }
+    else
+    {
+    @foreach (var post in Model.LatestPosts)
+    {
+            <div class="card text-bg-dark">
+            <img src="@post.ImageUrl" class="card-img" style="height:300px; object-fit:cover; position:center" alt="...">
+        <div class="card-img-overlay">
+                <h5 class="card-title title"><a asp-action="Index" asp-controller="Post" asp-route-id="@post.Id" class="postTitle">@post.Title</a></h5>
+            </div>
+              </div>
+    }
+        
+    }
+
+
+
+
+
+</div>

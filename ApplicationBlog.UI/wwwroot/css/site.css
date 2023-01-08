@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.CardContainer{
+    display:flex;
+    flex-direction : column;
+    background-color:white;
+    height : 500px;
+    width : 900px;
+}
+.CardContainer .BackgroundImage {
+        background-repeat: no-repeat;
+        background-position: center;
+        height : 500px;
+        width: 900px;
+    }
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.title{
+    color : white;
+    background-color : black;
+    width : 200px;
+    padding : 20px;
+    padding-left : 10px;
+    padding-right : 5px
+}
+.postContainer{
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+}
+    .postContainer .postImage{
+        background-size:cover;
+        height : 350px;
+        width : 700px;
+        justify-self:center;
+        
+    }
+.postTitle{
+    text-decoration : none;
+    text-transform : uppercase;
+    color : white;
+}
+
+.authorName {
+    font-family: 'Roboto', sans-serif;
+    font-weight : 700;
+    text-transform : uppercase;
+}
+.authorEmail {
+    font-family: 'Roboto', sans-serif;
+    font-weight : 350;
+}
+.replyContent {
+    font-family: 'Roboto', sans-serif;
+    font-weight : 500;
+}
+.replyContainer{
+    display : flex;
+    flex-direction : row;
+    margin-top : 50px;
+}
+.rep{
+    display : flex;
+    flex-direction : column;
+
+}
+.replyContainer form{
+    margin-left : 30px;
+}
+.adminSetting{
+    display : flex;
+    flex-direction : row;
+    margin-top : 20px;
+    margin-bottom : 20px;
+    
+}
+.adminSetting .btn-danger{
+    margin-left : 10px;
+}
+.navLogo {
+    background-image: url("/images/Logo.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-right: 16px;
+    width = 70px;
+    margin-right: 12px;
+    background-position: center;
+}

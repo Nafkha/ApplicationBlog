@@ -1,0 +1,15 @@
+﻿@model ApplicationBlog.UI.Models.Category.CategoryListingModel
+
+<div class="container">
+    <form method="post" asp-action="UpdateCategory">
+        <div class="form-group">
+            <label asp-for="Name">Title</label>
+            <input asp-for="Name" class="form-control" value="@Model.Name" />
+
+        </div>
+     
+        <button type="submit" id="submitPostBtn" class="btn btn-primary">Update Category</button>
+        <input asp-for="Id" type="hidden" />
+
+    </form>
+</div>

@@ -1,0 +1,23 @@
+﻿@model ApplicationBlog.UI.Models.Post.NewPostModel
+
+<h1>Create New Post</h1>
+
+<form asp-action="AddPost" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        
+    </div>
+
+        <div class="form-group">
+        <label asp-for="Content"></label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+    </div>
+  <label class="btn btn-default btn-file">
+                            Browse <input asp-for="ImageUpload" type="file" />
+                        </label>
+    <button type="submit" id="submitPostBtn" class="btn btn-submitPost">Submit Post</button>
+    <input asp-for="CategorieId" type="hidden" />
+    <input asp-for="Created" type="hidden" />
+
+</form>

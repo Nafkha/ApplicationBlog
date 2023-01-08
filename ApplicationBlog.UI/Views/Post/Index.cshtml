@@ -1,0 +1,55 @@
+﻿@model ApplicationBlog.UI.Models.Post.PostIndexModel
+
+
+<div class="container">
+    <div class="postContainer">
+        <h3>@Model.Title</h3>
+        <div style="background-image:url('@Model.image')" class="postImage"></div>
+        <p class="postContent">@Model.Content</p>
+        @if (Context.User.Identity.IsAuthenticated)
+        {
+            <div class="adminSetting">
+            
+            <span>
+                    <a class="btn btn-secondary" asp-action="Update" asp-route-id="@Model.Id">Update Post</a>
+
+            </span>
+
+        <form method="post" asp-action="Delete" asp-route-id="@Model.Id" class="deleteFrom">
+            <input type="submit" class="btn btn-danger" value="Remove Post" />
+
+        </form>
+            
+            </div>
+        }
+        <span> <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-primary">Create Reply</a></span>
+
+        @if (!Model.replies.Any())
+        {
+            <h4> No Replies </h4>
+        }
+        else
+        {
+            @foreach(var rep in Model.replies)
+            {
+                <div class="replyContainer">
+                <div class="rep">
+                <span class="authorName">@rep.authorFirstName @rep.authorLastName</span>
+                <span class="authorEmail">@rep.authorEmail</span>
+                <p class="replyContent">@rep.replyContent</p>
+                    </div>
+                        @if (Context.User.Identity.IsAuthenticated)
+                        {
+                    <form method="post" asp-action="DeleteReply" asp-route-id="@rep.Id">
+                        <input type="submit" class="btn btn-danger" value="Remove Reply"/>
+                    </form>
+                            
+                        }
+                </div>
+            }
+        }
+
+    </div>
+</div>
+
+

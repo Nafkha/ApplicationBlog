@@ -1,0 +1,29 @@
+﻿@model ApplicationBlog.UI.Models.Reply.ReplyModel
+
+<form asp-action="AddReply" method="post">
+        <div class="form-group">
+            <label asp-for="authorFirstName">First Name</label>
+            <input asp-for="authorFirstName" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="authorLastName">Last Name</label>
+            <input asp-for="authorLastName" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="authorEmail">Email</label>
+            <input asp-for="authorEmail" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="replyContent">Reply</label>
+            <textarea asp-for="replyContent" class="form-control"></textarea>
+
+        </div>
+
+
+        <button type="submit" id="submitPostBtn" class="btn btn-primary">Submit Reply</button>
+        <input asp-for="postId" type="hidden" />
+
+</form>

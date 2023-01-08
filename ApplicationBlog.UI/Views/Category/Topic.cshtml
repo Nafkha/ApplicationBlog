@@ -1,0 +1,27 @@
+﻿@model ApplicationBlog.UI.Models.Category.CategoryTopicModel
+<h1>@Model.Category.Name</h1>
+
+@if (Context.User.Identity.IsAuthenticated)
+{
+    <span id="headingBtn">
+        <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Category.Id" class="btn btn-primary" btn-newPost>Create Post</a>
+    </span>
+    
+}
+
+
+
+<div class="container">
+
+    @foreach (var post in Model.Posts)
+    {
+        <div class="card text-bg-dark">
+        <img src="@post.ImageUrl" class="card-img" style="height:300px; object-fit:cover; position:center" alt="...">
+    <div class="card-img-overlay">
+    <h5 class="card-title title"><a asp-action="Index" asp-controller="Post" asp-route-id="@post.Id" class="postTitle">@post.Title</a></h5>
+    </div>
+    </div>
+    }
+
+
+</div>

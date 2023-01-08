@@ -1,0 +1,51 @@
+﻿@model ApplicationBlog.UI.Models.Category.CategoryIndexModel
+
+<h1> Categories</h1>
+
+
+<table class="table table-hover" id="forumIndexTable">
+    @if (Context.User.Identity.IsAuthenticated)
+    {
+    <span>
+        <a asp-controller="Category" asp-action="Create" class="btn btn-secondary">Create Category</a>
+    </span>
+        
+    }
+    <thead>
+        <td>Title</td><td>Number of posts</td><td></td><td></td>
+    </thead>
+    <tbody>
+       
+
+        @foreach (var cat in Model.CategoryList)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Category" asp-action="Topic" asp-route-id="@cat.Id">
+
+                        @cat.Name
+                    </a>
+                </td>
+                <td>@cat.posts</td>
+                @if (Context.User.Identity.IsAuthenticated)
+                {
+                    
+                <td>
+                        <form asp-controller="Category" asp-action="Delete" asp-route-id="@cat.Id" method="post"><input type="submit" class="btn btn-danger" value="Delete Category" /> </form>
+                </td>
+                    <td>
+                        <span><a class="btn btn-secondary" asp-action="Update" asp-route-id="@cat.Id">Update Category</a></span>
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                    <td></td>
+                }
+            </tr>
+
+
+        }
+        
+    </tbody>
+</table>
