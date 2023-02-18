@@ -5,6 +5,7 @@ using ApplicationBlog.UI.Models.Post;
 using ApplicationBlog.UI.Models.Reply;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Net.Http.Headers;
 using System.ComponentModel;
 
@@ -60,6 +61,7 @@ namespace ApplicationBlog.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPost(NewPostModel model)
         {
+            
 
             var connectionString = _configuration.GetConnectionString("AzureStorageAccount");
 

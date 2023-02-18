@@ -6,5 +6,6 @@
         public string Title { get; set; }
         public DateTime? DatePosted { get; set; }
         public string? ImageUrl;
+        public string category { get; set; }
     }
 }

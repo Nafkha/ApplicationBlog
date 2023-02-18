@@ -1,6 +1,7 @@
 ﻿using ApplicationBlog.DAL.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace ApplicationBlog.UI.Data
 {
@@ -16,6 +17,12 @@ namespace ApplicationBlog.UI.Data
            : base(options)
         {
         }
+     /*   protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Post>().HasOne(p => p.Categorie).WithMany(p => p.Posts).HasForeignKey(c => c.CatId).OnDelete(DeleteBehavior.Cascade);
+                
+        }*/
 
     }
 }

@@ -6,9 +6,14 @@
 
 <div class="container">
 
+    <div class="blogHeader">
+        <h2>Welcome <br /> To <br /> Application <br /> BLOG</h2>
+    </div>
+
+
     @if (!Model.LatestPosts.Any())
     {
-        <h1>THERE IS NO POST HERE</h1>
+        <h1 class="blogEmptyMessage">Currently, <br /> This Blog is Empty</h1>
     }
     else
     {
@@ -17,7 +22,8 @@
             <div class="card text-bg-dark">
             <img src="@post.ImageUrl" class="card-img" style="height:300px; object-fit:cover; position:center" alt="...">
         <div class="card-img-overlay">
-                <h5 class="card-title title"><a asp-action="Index" asp-controller="Post" asp-route-id="@post.Id" class="postTitle">@post.Title</a></h5>
+                <h5 class="card-title title"><a asp-action="Index" asp-controller="Post" asp-route-id="@post.Id" class="postTitle">@post.Title / @post.category</a></h5>
+
             </div>
               </div>
     }

@@ -32,7 +32,8 @@ namespace ApplicationBlog.UI.Controllers
                 Id = post.postId,
                 Title = post.Title,
                 DatePosted= post.Created,
-                ImageUrl = post.postImage
+                ImageUrl = post.postImage,
+                category = post.Categorie.Title
 
             });
             return new HomeIndexModel

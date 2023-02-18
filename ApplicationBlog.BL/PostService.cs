@@ -56,7 +56,7 @@ namespace ApplicationBlog.BL
 
         public IEnumerable<Post> GetAll()
         {
-            return _context.posts;
+            return _context.posts.Include(post=>post.Categorie);
         }
 
         public Post GetById(int id)
